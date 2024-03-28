@@ -9,7 +9,7 @@ This can be useful when using a node.js framework or library, which is what this
 2. **Add the deployment key**<br>
    Go to your repository settings at **Security** > **Secrets and variables** > **Actions**. Create a new repository secret called `PERSONAL_TOKEN` and add the personal token you created above.
 3. **Create the GitHub action**<br>
-   Add the following file as **.github/workflows/gh-pages.yml**. It will set up NPM, PNPM, use `pnpm build` and expect the folder to be `/dist` - this is easily changeable, though.
+   Add the following file as **.github/workflows/gh-pages.yml**. It will set up NPM, PNPM, use `pnpm build` and expect the folder to be `/dist` and use the `main` branch - this is easily changeable, though.
 
    ```yml
    name: Upload to GitHub pages
@@ -17,7 +17,7 @@ This can be useful when using a node.js framework or library, which is what this
    on:
      push:
        branches:
-         - master
+         - main
 
    jobs:
      build-deploy:
